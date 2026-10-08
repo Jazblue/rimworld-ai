@@ -88,7 +88,7 @@ namespace RimMind.Tools
             if (removeAll)
             {
                 var planDesignations = new List<Designation>();
-                foreach (var des in map.designationManager.allDesignations)
+                foreach (var des in map.designationManager.AllDesignations)
                 {
                     if (des.def == DesignationDefOf.Plan)
                         planDesignations.Add(des);

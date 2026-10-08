@@ -1,0 +1,822 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafafa;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.hero-content .description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn.github {
+    background-color: #24292e;
+    color: white;
+}
+
+.btn.github:hover {
+    background-color: #1a1f24;
+}
+
+.btn.rimmind {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.btn.rimmind:hover {
+    background-color: #ff5252;
+}
+
+.btn.openrouter {
+    background-color: #00d084;
+    color: white;
+}
+
+.btn.openrouter:hover {
+    background-color: #00b574;
+}
+
+.btn.view-project {
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn.view-project:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+.btn.future-research {
+    background-color: #f39c12;
+    color: white;
+}
+
+.btn.future-research:hover {
+    background-color: #e67e22;
+}
+
+/* Discovery section */
+.discovery {
+    text-align: center;
+}
+
+.discovery-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.expected, .actual {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.expected h3, .actual h3 {
+    color: #e74c3c;
+}
+
+.label {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #7f8c8d;
+}
+
+.ai-player, .ai-advisor, .human {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.step {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #ecf0f1;
+    border-radius: 20px;
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
+}
+
+.caption {
+    margin-top: 15px;
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* RimMind functionality section */
+.rimmind-functionality .section-intro {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.tool-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.category {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.category h3 {
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.category ul {
+    list-style: none;
+}
+
+.category li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #bdc3c7;
+    font-size: 0.95rem;
+}
+
+.category li:last-child {
+    border-bottom: none;
+}
+
+.total-tools {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Technical Architecture section */
+.technical-architecture {
+    text-align: center;
+}
+
+.architecture-diagram {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.block {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 50px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: #7f8c8d;
+    margin: 0 10px;
+}
+
+.architecture-note {
+    margin-top: 20px;
+    font-style: italic;
+    color: #7f8c8d;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Technical Work section */
+.technical-work .work-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.work-item {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid #3498db;
+}
+
+.work-item h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.work-item h3::before {
+    content: "•";
+    color: #3498db;
+    font-size: 1.5rem;
+}
+
+.work-item p {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Current Status section */
+.current-status {
+    text-align: center;
+}
+
+.status-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.status-table th,
+.status-table td {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.status-table th {
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.status-table td {
+    background-color: white;
+    border-top: 1px solid #eee;
+    font-weight: 500;
+}
+
+.status-table tr:last-child td {
+    border-bottom: none;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status.working {
+    background-color: #d5f5e3;
+    color: #27ae60;
+}
+
+.status.installed {
+    background-color: #d6eaf8;
+    color: #2980b9;
+}
+
+.status.configured {
+    background-color: #fadbd8;
+    color: #d35400;
+}
+
+.status.not-implemented {
+    background-color: #fadbd8;
+    color: #e74c3c;
+}
+
+/* Limitations section */
+.limitations {
+    background-color: #fff;
+}
+
+.limitations .section-intro {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.cannot-do {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    margin-top: 25px;
+    font-size: 1.1rem;
+}
+
+.cannot-do li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.cannot-do li::before {
+    content: "✕";
+    position: absolute;
+    left: 0;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.note {
+    margin-top: 25px;
+    font-style: italic;
+    color: #7f8c8d;
+    text-align: center;
+}
+
+/* Future section */
+.future {
+    text-align: center;
+}
+
+.future .section-intro {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.future-architecture {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.future .step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 40px;
+    background-color: #f8f9fa;
+    border: 2px dashed #bdc3c7;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.future .arrow {
+    font-size: 1.5rem;
+    color: #95a5a6;
+    margin: 0;
+}
+
+.future-actions {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    margin-top: 30px;
+    font-size: 1.05rem;
+}
+
+.future-actions li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.future-actions li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+.future-note {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 0 4px 4px 0;
+    font-size: 1rem;
+    color: #856404;
+}
+
+/* Lessons section */
+.lessons .lessons-list {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    margin-top: 25px;
+    font-size: 1.05rem;
+}
+
+.lessons-list li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.lessons-list li::before {
+    content: "💡";
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-content .description {
+        font-size: 1.1rem;
+    }
+
+    .discovery-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .expected, .actual {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .cannot-do,
+    .future-actions,
+    .lessons-list {
+        columns: 1;
+    }
+
+    .architecture-diagram {
+        flex-direction: column;
+    }
+
+    .block {
+        width: 180px;
+    }
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+    .container {
+        /* Keep container styling */
+    }
+
+    .section:nth-child(even) {
+        background-color: #1e1e1e;
+    }
+
+    .hero {
+        /* Keep gradient or adjust */
+        background: linear-gradient(135deg, #4a55a2 0%, #5a3077 100%);
+    }
+
+    .hero-content h1 {
+        color: white;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-content .subtitle {
+        opacity: 0.8;
+    }
+
+    .hero-content .description {
+        color: #ddd;
+    }
+
+    .btn.github {
+        background-color: #24292e;
+        color: #fff;
+    }
+
+    .btn.github:hover {
+        background-color: #1a1f24;
+    }
+
+    .btn.rimmind {
+        background-color: #ff6b6b;
+        color: white;
+    }
+
+    .btn.rimmind:hover {
+        background-color: #ff5252;
+    }
+
+    .btn.openrouter {
+        background-color: #00d084;
+        color: white;
+    }
+
+    .btn.openrouter:hover {
+        background-color: #00b574;
+    }
+
+    .btn.view-project {
+        background-color: rgba(255,255,255,0.1);
+        color: white;
+        border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .btn.view-project:hover {
+        background-color: rgba(255,255,255,0.2);
+    }
+
+    .btn.future-research {
+        background-color: #f39c12;
+        color: white;
+    }
+
+    .btn.future-research:hover {
+        background-color: #e67e22;
+    }
+
+    .discovery h3 {
+        color: #ff6b6b;
+    }
+
+    .label {
+        color: #bdc3c7;
+    }
+
+    .step {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+    }
+
+    .caption {
+        color: #bdc3c7;
+    }
+
+    .rimmind-functionality .section-intro {
+        color: #bdc3c7;
+    }
+
+    .category {
+        background-color: #1e1e1e;
+        border-color: #2d2d2d;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .category h3 {
+        border-bottom-color: #4a90e2;
+        color: #e0e0e0;
+    }
+
+    .category li {
+        border-bottom-color: #2d2d2d;
+        color: #ddd;
+    }
+
+    .total-tools {
+        color: #e0e0e0;
+    }
+
+    .technical-architecture .block {
+        background-color: #2d2d2d;
+        color: #e0e0e0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    .arrow {
+        color: #bdc3c7;
+    }
+
+    .architecture-note {
+        color: #bdc3c7;
+    }
+
+    .technical-work .work-item {
+        background-color: #1e1e1e;
+        border-left-color: #4a90e2;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .work-item h3 {
+        color: #e0e0e0;
+    }
+
+    .work-item p {
+        color: #bdc3c7;
+    }
+
+    .status-table th {
+        background-color: #4a90e2;
+        color: white;
+    }
+
+    .status-table td {
+        background-color: #2d2d2d;
+        border-top-color: #3d3d3d;
+        color: #ddd;
+    }
+
+    .status.working {
+        background-color: #1e3a2a;
+        color: #2ecc71;
+    }
+
+    .status.installed {
+        background-color: #1e2a3a;
+        color: #3498db;
+    }
+
+    .status.configured {
+        background-color: #3a1e1e;
+        color: #e67e22;
+    }
+
+    .status.not-implemented {
+        background-color: #3a1e1e;
+        color: #e74c3c;
+    }
+
+    .limitations {
+        background-color: #1e1e1e;
+    }
+
+    .limitations .section-intro {
+        color: #bdc3c7;
+    }
+
+    .cannot-do li::before {
+        color: #e74c3c;
+    }
+
+    .note {
+        color: #bdc3c7;
+    }
+
+    .future .section-intro {
+        color: #bdc3c7;
+    }
+
+    .future .step {
+        background-color: #2d2d2d;
+        border-color: #3d3d3d;
+        color: #e0e0e0;
+    }
+
+    .future .arrow {
+        color: #bdc3c7;
+    }
+
+    .future-actions li::before {
+        color: #4a90e2;
+    }
+
+    .future-note {
+        background-color: #2d2311;
+        border-left-color: #ffc107;
+        color: #d4b05a;
+    }
+
+    .lessons .lessons-list li {
+        color: #ddd;
+    }
+
+    .lessons-list li::before {
+        color: #f39c12;
+    }
+
+    .footer {
+        background-color: #1a1a1a;
+    }
+
+    .footer-links a {
+        color: #bdc3c7;
+    }
+
+    .footer-links a:hover {
+        color: white;
+    }
+}

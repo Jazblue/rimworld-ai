@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RimWorld AI</title>
+    <meta name="description" content="An AI chatbot and colony advisor for RimWorld, powered by RimMind and OpenRouter.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header / Hero -->
+    <header class="hero">
+        <div class="container">
+            <h1>RimWorld AI</h1>
+            <p class="tagline">AI-powered intelligence for your RimWorld colony</p>
+            <div class="hero-links">
+                <a href="https://github.com/Jazblue" class="btn github" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/Bwarhness/RimMind" class="btn rimmind" target="_blank" rel="noopener">RimMind Source</a>
+                <a href="https://openrouter.ai" class="btn openrouter" target="_blank" rel="noopener">OpenRouter</a>
+                <a href="../README.md" class="btn docs" target="_blank" rel="noopener">Project README</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <section class="section about">
+            <div class="container">
+                <h2>About the Project</h2>
+                <p>
+                    This project documents the integration of AI with RimWorld through the RimMind mod.
+                    Initially, I hoped to explore whether an AI could actually <strong>play RimWorld</strong> — making decisions and controlling the colony autonomously.
+                    After setting up RimMind with OpenRouter and Claude, I discovered it functions primarily as an <strong>AI chatbot and colony advisor</strong>.
+                </p>
+                <p>
+                    The website honestly explains what RimMind does, what it does not do, and outlines the technical work performed to get it running on RimWorld 1.5.4062.
+                </p>
+            </div>
+        </section>
+
+        <section class="section what-does">
+            <div class="container">
+                <h2>What RimMind Does</h2>
+                <p>
+                    RimMind provides an AI interface that can <strong>query and understand</strong> aspects of the RimWorld colony through various read‑only tools.
+                    It does <strong>not</strong> autonomously control the game.
+                </p>
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <h3>Colonist</h3>
+                        <p>4 tools</p>
+                        <ul>
+                            <li>list_colonists</li>
+                            <li>get_colonist_details</li>
+                            <li>get_colonist_health</li>
+                            <li>get_colonist_health</li>
+                        </ul>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Social</h3>
+                        <p>2 tools</p>
+                        <ul>
+                            <li>get_relationships</li>
+                            <li>get_faction_relations</li>
+                        </ul>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Work</h3>
+                        <p>3 tools</p>
+                        <ul>
+                            <li>get_work_priorities</li>
+                            <li>get_bills</li>
+                            <li>get_schedules</li>
+                        </ul>
+                    </div>
+                    <div class="tool-card">
+                        <h3>Colony</h3>
+                        <p>4 tools</p>
+                        <ul>
+                            <li>get_colony_overview</li>
+                            <li>get_resources</li>
+                            <li>get_rooms</li>
+                        <li>remove_plans</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="total-tools"><strong>Total: 24 query tools</strong> for observing colony state.</p>
+        </div>
+    </section>
+
+    <section id="technical-architecture" class="section technical-architecture">
+        <div class="container">
+            <h2>Technical Architecture</h2>
+            <div class="architecture-diagram">
+                <div class="block rimworld">RimWorld 1.5.4062</div>
+                <div class="arrow">→</div>
+                <div class="block rimmind">RimMind</div>
+                <div class="arrow">→</div>
+                <div class="block openrouter">OpenRouter</div>
+                <div class="arrow">→</div>
+                <div class="block claude">Claude / AI</div>
+                <div class="arrow">→</div>
+                <div class="block advice">AI Response/Advice</div>
+                <div class="arrow">→</div>
+                <div class="block player">Player</div>
+            </div>
+            <p class="architecture-note">
+                Current system is primarily <strong>read/observe → explain</strong>. The AI observes colony state through RimMind's tools, processes with OpenRouter/Claude, and returns advice to the human player who then decides and acts in the game.
+            </p>
+        </div>
+    </section>
+
+    <section id="technical-work" class="section technical-work">
+        <div class="container">
+            <h2>Technical Work Completed</h2>
+            <div class="work-items">
+                <div class="work-item">
+                    <h3>RimWorld 1.5 Compatibility</h3>
+                    <p>Adapted RimMind to build against the actual standalone RimWorld 1.5.4062 assemblies.</p>
+                </div>
+                <div class="work-item">
+                    <h3>Assembly References</h3>
+                    <p>Updated project references to point to the real RimWorld installation rather than unavailable relative Workshop paths.</p>
+                </div>
+                <div class="work-item">
+                    <h3>API Compatibility Fix</h3>
+                    <p>Corrected <code>allDesignations</code> to <code>AllDesignations</code> to match the actual RimWorld 1.5.4062 API in <code>PlanTools.cs</code>.</p>
+                </div>
+                <div class="work-item">
+                    <h3>Build Success</h3>
+                    <p>Build succeeded with <strong>0 errors and 0 warnings</strong> after compatibility updates.</p>
+                </div>
+                <div class="work-item">
+                    <h3>Harmony Integration</h3>
+                    <p>Integrated official Harmony library for RimWorld 1.5, recognized and loading correctly.</p>
+                </div>
+                <div class="work-item">
+                    <h3>OpenRouter Configuration</h3>
+                    <p>Configured OpenRouter as the AI API layer (API key stored securely via RimMind's in-game settings).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="current-status" class="section current-status">
+        <div class="container">
+            <h2>Current Status</h2>
+            <table class="status-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RimWorld 1.5.4062</td>
+                        <td><span class="status working">Working</span></td>
+                    </tr>
+                    <tr>
+                        <td>RimMind</td>
+                        <td><span class="status installed">Installed</span></td>
+                    </tr>
+                    <tr>
+                        <td>Harmony</td>
+                        <td><span class="status working">Working</span></td>
+                    </tr>
+                    <tr>
+                        <td>OpenRouter</td>
+                        <td><span class="status configured">Configured</span></td>
+                    </tr>
+                    <tr>
+                        <td>AI Colony Queries</td>
+                        <td><span class="status working">Working</span></td>
+                    </tr>
+                    <tr>
+                        <td>AI Advice</td>
+                        <td><span class="status working">Working</span></td>
+                    </tr>
+                    <tr>
+                        <td>Autonomous Game Control</td>
+                        <td><span class="status not-implemented">Not Implemented</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="limitations" class="section limitations">
+        <div class="container">
+            <h2>What It Cannot Currently Do</h2>
+            <p class="section-intro">
+                Be very explicit: the current project does NOT claim to:
+            </p>
+            <ul class="cannot-do">
+                <li>Automatically play RimWorld</li>
+                <li>Control the mouse or keyboard</li>
+                <li>Independently manage the colony</li>
+                <li>Build structures without human input</li>
+                <li>Independently move colonists</li>
+                <li>Independently fight battles</li>
+                <li>Run an autonomous decision/action loop</li>
+            </ul>
+            <p class="note">
+                These are future research goals, not current capabilities.
+            </p>
+        </div>
+    </section>
+
+    <section id="future" class="section future">
+        <div class="container">
+            <h2>The Interesting Part: Future AI Player</h2>
+            <p class="section-intro">
+                From AI Advisor to AI Player - the desired future architecture:
+            </p>
+            <div class="future-architecture">
+                <div class="step">OBSERVE</div>
+                <div class="arrow">→</div>
+                <div class="step">UNDERSTAND</div>
+                <div class="arrow">→</div>
+                <div class="step">DECIDE</div>
+                <div class="arrow">→</div>
+                <div class="step">VALIDATE</div>
+                <div class="arrow">→</div>
+                <div class="step">ACT</div>
+                <div class="arrow">→</div>
+                <div class="step">OBSERVE AGAIN</div>
+                <div class="arrow">→</div>
+                <div class="step">REPEAT</div>
+            </div>
+            <h3>Potential Future Actions (Research Only)</h3>
+            <ul class="future-actions">
+                <li>Assign work to colonists</li>
+                <li>Change work priorities dynamically</li>
+                <li>Create designations for construction, mining, farming</li>
+                <li>Order construction at workbenches</li>
+                <li>Manage growing zones (crop selection, soil treatment)</li>
+                <li>Manage bills (ingredient requirements, suspension)</li>
+                <li>Draft colonists for combat, training, or specific tasks</li>
+                <li>Move colonists to specific locations or zones</li>
+                <li>Research project selection and management</li>
+                <li>Emergency response protocols (firefighting, disease treatment)</li>
+                <li>Resource allocation and trading decisions</li>
+            </ul>
+            <p class="future-note">
+                <strong>None of these autonomous capabilities are currently implemented.</strong> They represent future research directions.
+            </p>
+        </div>
+    </section>
+
+    <section id="lessons" class="section lessons">
+        <div class="container">
+            <h2>Lessons Learned</h2>
+            <ul class="lessons-list">
+                <li>AI integration is not the same as AI control.</li>
+                <li>Giving an AI access to game state does not automatically give it the ability to change the game.</li>
+                <li>Read-only tools and action tools are fundamentally different - observation ≠ intervention.</li>
+                <li>Current RimWorld modding APIs (via HugsLib/Harmony) provide extensive observation capabilities but limited direct action capabilities for complex AI decision loops.</li>
+                <li>Configuration management is crucial - keeping API keys secure while allowing user configuration.</li>
+                <li>Technical compatibility requires attention to API versions and assembly references when working with specific game versions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 RimWorld AI Project. Built with honesty and technical curiosity.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Jazblue" target="_blank">GitHub</a>
+                <a href="https://github.com/Bwarhness/RimMind" target="_blank">RimMind Source</a>
+                <a href="https://openrouter.ai" target="_blank">OpenRouter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
